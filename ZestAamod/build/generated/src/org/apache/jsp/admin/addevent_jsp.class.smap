@@ -1,0 +1,21 @@
+SMAP
+addevent_jsp.java
+JSP
+*S JSP
+*F
++ 0 importPackages.jsp
+admin/../importPackages.jsp
++ 1 addevent.jsp
+admin/addevent.jsp
+*L
+1,6:63
+1#1,2:68
+3,8:16
+10,10:70
+19,7:80
+25:87
+26:88,3
+27:91
+28,8:93
+35,14:101
+*E

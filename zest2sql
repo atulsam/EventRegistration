@@ -1,0 +1,393 @@
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
+--
+-- Host: localhost    Database: zest
+-- ------------------------------------------------------
+-- Server version	5.5.19
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `club`
+--
+
+DROP TABLE IF EXISTS `club`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `club` (
+  `cid` varchar(100) NOT NULL,
+  `mnp` int(5) NOT NULL DEFAULT '5',
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `club`
+--
+
+LOCK TABLES `club` WRITE;
+/*!40000 ALTER TABLE `club` DISABLE KEYS */;
+INSERT INTO `club` VALUES ('Aamod',5),('Dance',5),('Deco',5),('Drama',5),('FineArts',5),('Informals',5),('Music',5),('Renaissance',5);
+/*!40000 ALTER TABLE `club` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `clubparticipation`
+--
+
+DROP TABLE IF EXISTS `clubparticipation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clubparticipation` (
+  `pid` varchar(50) NOT NULL,
+  `Aeronautics` int(10) NOT NULL DEFAULT '0',
+  `Equinox` int(10) NOT NULL DEFAULT '0',
+  `IT_Club` int(10) NOT NULL DEFAULT '0',
+  `Pharmaquimica` int(10) NOT NULL DEFAULT '0',
+  `Robotrax` int(10) NOT NULL DEFAULT '0',
+  `Synergy` int(10) NOT NULL DEFAULT '0',
+  `Literary` int(10) NOT NULL DEFAULT '0',
+  `Drama` int(10) NOT NULL DEFAULT '0',
+  `FineArts` int(10) NOT NULL DEFAULT '0',
+  `Music` int(10) NOT NULL DEFAULT '0',
+  `Deco` int(10) NOT NULL DEFAULT '0',
+  `Informals` int(10) NOT NULL DEFAULT '0',
+  `Renaissance` int(10) NOT NULL DEFAULT '0',
+  `Dance` int(10) NOT NULL DEFAULT '0',
+  `Lan_Games` int(10) NOT NULL DEFAULT '0',
+  `Aamod` int(10) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clubparticipation`
+--
+
+LOCK TABLES `clubparticipation` WRITE;
+/*!40000 ALTER TABLE `clubparticipation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clubparticipation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `events` (
+  `eid` varchar(50) NOT NULL,
+  `ename` text,
+  `type` varchar(45) DEFAULT NULL,
+  `group` int(5) DEFAULT NULL,
+  `club` varchar(100) NOT NULL DEFAULT 'other',
+  `sex` varchar(45) NOT NULL DEFAULT 'both',
+  PRIMARY KEY (`eid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `events`
+--
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES ('antakshari','Antakshari','zest',3,'Informals','both'),('atheletics1','100 Meter','Aamod',1,'Aamod','both'),('atheletics10','Short Put','Aamod',1,'Aamod','both'),('atheletics11','Javelin Throw','Aamod',1,'Aamod','both'),('atheletics2','200 Meter','Aamod',1,'Aamod','both'),('atheletics3','400 Meter','Aamod',1,'Aamod','both'),('atheletics4','800 Meter','Aamod',1,'Aamod','male'),('atheletics5','4X100 Meter Relay Boys','Aamod',4,'Aamod','male'),('atheletics6','4X100 Meter Relay girls','Aamod',4,'Aamod','female'),('atheletics7','4X400 Meter Relay Boys','Aamod',4,'Aamod','male'),('atheletics8','Long Jump','Aamod',1,'Aamod','both'),('atheletics9','High Jump','Aamod',1,'Aamod','both'),('badminton1','BADMINTON  ','Aamod',1,'Aamod','both'),('badminton2','BADMINTON  Boys','Aamod',2,'Aamod','male'),('badminton3','BADMINTON  Girls','Aamod',2,'Aamod','female'),('basketball','BasketBall Boys','Aamod',10,'Aamod','male'),('basketball1','BasketBall Girls','Aamod',10,'Aamod','female'),('bestDancer','Best Dancer','zest',1,'Dance','both'),('carrom','Carrom','Aamod',1,'Aamod','both'),('charcolate','Charcolate','zest',1,'FineArts','both'),('chess','Chess','Aamod',1,'Aamod','both'),('cs','Counter Strike','Aamod',5,'Aamod','both'),('duet','Duat','zest',2,'Music','both'),('duetDance','Duet Dance','zest',2,'Dance','both'),('dumbCharades','Dumb Charades','zest',2,'Informals','both'),('fabricate','Fabricate','zest',1,'Deco','both'),('faceOff','Face Off','zest',2,'Dance','both'),('fifa','FIFA 15','Aamod',1,'Aamod','both'),('Football','Football Boys','Aamod',14,'Aamod','male'),('graffiti','Graffiti','zest',1,'Deco','both'),('gratis','Gratis','zest',2,'FineArts','both'),('groupDance','Indian Group Dance','zest',30,'Dance','both'),('indianSolo','Indian Solo','zest',1,'Music','both'),('karaoke','Karaoke','zest',2,'Music','both'),('khokho','kho kho boys','Aamod',11,'Aamod','male'),('khokho1','kho kho girls','Aamod',11,'Aamod','female'),('mehndhika','Mehndhika','zest',1,'FineArts','both'),('mime','Mime','zest',15,'Drama','both'),('mindBuzz','Mind Buzz','zest',2,'Informals','both'),('monoAct','MONO ACTING','zest',1,'Drama','both'),('movieQuiz','Movie Quiz','zest',2,'Informals','both'),('movieSpoof','Movie Spoof','zest',15,'Drama','both'),('multiscene','Multiscene','zest',25,'Drama','both'),('nfsmw','NFSMW','Aamod',1,'Aamod','both'),('oneAct','One Act','zest',15,'Drama','both'),('rangoli','Rangoli','zest',2,'Deco','both'),('renaissance','Renaissance (Fashion Show)','zest',1,'Renaissance','both'),('sculpting','Sculpting','zest',1,'Deco','both'),('situationalSong','Situational Song','zest',2,'Informals','both'),('soloDance','Solo Dance','zest',1,'Dance','both'),('streatPlay','Streat Play','zest',15,'Drama','both'),('Tekken3','Tekken3','Aamod',1,'Aamod','both'),('themeSolo','Theme Solo','zest',1,'Music','both'),('tt','Table Tennis','Aamod',1,'Aamod','both'),('tt1','Table Tennis Boys','Aamod',2,'Aamod','male'),('tt2','Table Tennis Girls','Aamod',2,'Aamod','female'),('volleyball1','VolleyBall  (Boys)','Aamod',10,'Aamod','male'),('volleyball2','VolleyBall (Girls)','Aamod',10,'Aamod','female'),('vozest','Voice Of Zest','zest',1,'Music','both'),('westernSolo','Western Solo','zest',1,'Music','both'),('whistling','Whistling','zest',1,'Informals','both');
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login_master`
+--
+
+DROP TABLE IF EXISTS `login_master`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `login_master` (
+  `id` varchar(50) NOT NULL,
+  `pass` text NOT NULL,
+  `type` varchar(45) NOT NULL DEFAULT 'rc',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login_master`
+--
+
+LOCK TABLES `login_master` WRITE;
+/*!40000 ALTER TABLE `login_master` DISABLE KEYS */;
+INSERT INTO `login_master` VALUES ('ashish','moto','admin'),('atulsam','sam','admin');
+/*!40000 ALTER TABLE `login_master` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `participant`
+--
+
+DROP TABLE IF EXISTS `participant`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `participant` (
+  `pid` int(10) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `college` text NOT NULL,
+  `phone` text NOT NULL,
+  `rollno` varchar(45) NOT NULL,
+  `branch` text,
+  `printed` int(5) NOT NULL DEFAULT '0',
+  `by` varchar(45) NOT NULL,
+  `ge` int(5) NOT NULL DEFAULT '0',
+  `sex` varchar(45) NOT NULL DEFAULT 'Male',
+  `college1` text NOT NULL,
+  PRIMARY KEY (`pid`),
+  UNIQUE KEY `rollno_UNIQUE` (`rollno`)
+) ENGINE=InnoDB AUTO_INCREMENT=1000 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `participant`
+--
+
+LOCK TABLES `participant` WRITE;
+/*!40000 ALTER TABLE `participant` DISABLE KEYS */;
+/*!40000 ALTER TABLE `participant` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `participation`
+--
+
+DROP TABLE IF EXISTS `participation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `participation` (
+  `pid` varchar(50) NOT NULL,
+  `atheletics11` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics10` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics9` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics8` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics7` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics6` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics5` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics4` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics3` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics2` varchar(50) NOT NULL DEFAULT 'nop',
+  `atheletics1` varchar(50) NOT NULL DEFAULT 'nop',
+  `khokho1` varchar(50) NOT NULL DEFAULT 'nop',
+  `khokho` varchar(50) NOT NULL DEFAULT 'nop',
+  `Football` varchar(50) NOT NULL DEFAULT 'nop',
+  `carrom` varchar(50) NOT NULL DEFAULT 'nop',
+  `chess` varchar(50) NOT NULL DEFAULT 'nop',
+  `volleyball2` varchar(50) NOT NULL DEFAULT 'nop',
+  `volleyball1` varchar(50) NOT NULL DEFAULT 'nop',
+  `basketball1` varchar(50) NOT NULL DEFAULT 'nop',
+  `basketball` varchar(50) NOT NULL DEFAULT 'nop',
+  `tt2` varchar(50) NOT NULL DEFAULT 'nop',
+  `tt1` varchar(50) NOT NULL DEFAULT 'nop',
+  `tt` varchar(50) NOT NULL DEFAULT 'nop',
+  `badminton3` varchar(50) NOT NULL DEFAULT 'nop',
+  `badminton2` varchar(50) NOT NULL DEFAULT 'nop',
+  `badminton1` varchar(50) NOT NULL DEFAULT 'nop',
+  `Tekken3` varchar(50) NOT NULL DEFAULT 'nop',
+  `nfsmw` varchar(50) NOT NULL DEFAULT 'nop',
+  `cs` varchar(50) NOT NULL DEFAULT 'nop',
+  `renaissance` varchar(50) NOT NULL DEFAULT 'nop',
+  `mindBuzz` varchar(50) NOT NULL DEFAULT 'nop',
+  `whistling` varchar(50) NOT NULL DEFAULT 'nop',
+  `antakshari` varchar(50) NOT NULL DEFAULT 'nop',
+  `situationalSong` varchar(50) NOT NULL DEFAULT 'nop',
+  `dumbCharades` varchar(50) NOT NULL DEFAULT 'nop',
+  `movieQuiz` varchar(50) NOT NULL DEFAULT 'nop',
+  `rangoli` varchar(50) NOT NULL DEFAULT 'nop',
+  `fabricate` varchar(50) NOT NULL DEFAULT 'nop',
+  `graffiti` varchar(50) NOT NULL DEFAULT 'nop',
+  `sculpting` varchar(50) NOT NULL DEFAULT 'nop',
+  `vozest` varchar(50) NOT NULL DEFAULT 'nop',
+  `karaoke` varchar(50) NOT NULL DEFAULT 'nop',
+  `duet` varchar(50) NOT NULL DEFAULT 'nop',
+  `westernSolo` varchar(50) NOT NULL DEFAULT 'nop',
+  `themeSolo` varchar(50) NOT NULL DEFAULT 'nop',
+  `indianSolo` varchar(50) NOT NULL DEFAULT 'nop',
+  `faceOff` varchar(50) NOT NULL DEFAULT 'nop',
+  `bestDancer` varchar(50) NOT NULL DEFAULT 'nop',
+  `duetDance` varchar(50) NOT NULL DEFAULT 'nop',
+  `soloDance` varchar(50) NOT NULL DEFAULT 'nop',
+  `groupDance` varchar(50) NOT NULL DEFAULT 'nop',
+  `mehndhika` varchar(50) NOT NULL DEFAULT 'nop',
+  `charcolate` varchar(50) NOT NULL DEFAULT 'nop',
+  `gratis` varchar(50) NOT NULL DEFAULT 'nop',
+  `movieSpoof` varchar(50) NOT NULL DEFAULT 'nop',
+  `monoAct` varchar(50) NOT NULL DEFAULT 'nop',
+  `mime` varchar(50) NOT NULL DEFAULT 'nop',
+  `streatPlay` varchar(50) NOT NULL DEFAULT 'nop',
+  `oneAct` varchar(50) NOT NULL DEFAULT 'nop',
+  `multiscene` varchar(50) NOT NULL DEFAULT 'nop',
+  `aarush` varchar(50) NOT NULL DEFAULT 'nop',
+  `chaos` varchar(50) NOT NULL DEFAULT 'nop',
+  `Anuk` varchar(50) NOT NULL DEFAULT 'nop',
+  `aqua` varchar(50) NOT NULL DEFAULT 'nop',
+  `srijan` varchar(50) NOT NULL DEFAULT 'nop',
+  `bomb` varchar(50) NOT NULL DEFAULT 'nop',
+  `wrong` varchar(50) NOT NULL DEFAULT 'nop',
+  `pharmam` varchar(50) NOT NULL DEFAULT 'nop',
+  `prose` varchar(50) NOT NULL DEFAULT 'nop',
+  `chakr` varchar(50) NOT NULL DEFAULT 'nop',
+  `spin` varchar(50) NOT NULL DEFAULT 'nop',
+  `under` varchar(50) NOT NULL DEFAULT 'nop',
+  `conr` varchar(50) NOT NULL DEFAULT 'nop',
+  `Hyd` varchar(50) NOT NULL DEFAULT 'nop',
+  `catapult` varchar(50) NOT NULL DEFAULT 'nop',
+  `FIFA` varchar(50) NOT NULL DEFAULT 'nop',
+  `CounterStrike` varchar(50) NOT NULL DEFAULT 'nop',
+  `NFS` varchar(50) NOT NULL DEFAULT 'nop',
+  `Electromania` varchar(50) NOT NULL DEFAULT 'nop',
+  `Megatron` varchar(50) NOT NULL DEFAULT 'nop',
+  `CircuitBoom` varchar(50) NOT NULL DEFAULT 'nop',
+  `Sensomania` varchar(50) NOT NULL DEFAULT 'nop',
+  `Vidhut` varchar(50) NOT NULL DEFAULT 'nop',
+  `Robowar` varchar(50) NOT NULL DEFAULT 'nop',
+  `Cosmoextoller` varchar(50) NOT NULL DEFAULT 'nop',
+  `Anveshan` varchar(50) NOT NULL DEFAULT 'nop',
+  `Aakriti` varchar(50) NOT NULL DEFAULT 'nop',
+  `Avishkar` varchar(50) NOT NULL DEFAULT 'nop',
+  `PrastutiPharma` varchar(50) NOT NULL DEFAULT 'nop',
+  `Groupdiscussion` varchar(50) NOT NULL DEFAULT 'nop',
+  `Debate` varchar(50) NOT NULL DEFAULT 'nop',
+  `Fault` varchar(50) NOT NULL DEFAULT 'nop',
+  `Aharnish` varchar(50) NOT NULL DEFAULT 'nop',
+  `ITQuest` varchar(50) NOT NULL DEFAULT 'nop',
+  `Codebuzz` varchar(50) NOT NULL DEFAULT 'nop',
+  `Admad` varchar(50) NOT NULL DEFAULT 'nop',
+  `Textnova` varchar(50) NOT NULL DEFAULT 'nop',
+  `Codifica` varchar(50) NOT NULL DEFAULT 'nop',
+  `Cyberview` varchar(50) NOT NULL DEFAULT 'nop',
+  `Asmanjas` varchar(50) NOT NULL DEFAULT 'nop',
+  `Javaguru` varchar(50) NOT NULL DEFAULT 'nop',
+  `Doshmarjan` varchar(50) NOT NULL DEFAULT 'nop',
+  `Rocketry` varchar(50) NOT NULL DEFAULT 'nop',
+  `Bridge` varchar(50) NOT NULL DEFAULT 'nop',
+  `Flight` varchar(50) NOT NULL DEFAULT 'nop',
+  `Chain` varchar(50) NOT NULL DEFAULT 'nop',
+  `Abhi` varchar(50) NOT NULL DEFAULT 'nop',
+  `total` int(5) NOT NULL DEFAULT '0',
+  `ztotal` int(5) DEFAULT '0',
+  `atotal` int(5) DEFAULT '0',
+  `gez` int(5) NOT NULL DEFAULT '0',
+  `gea` int(5) NOT NULL DEFAULT '0',
+  `iea` int(5) NOT NULL DEFAULT '0',
+  `iez` int(5) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `participation`
+--
+
+LOCK TABLES `participation` WRITE;
+/*!40000 ALTER TABLE `participation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `participation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `passout`
+--
+
+DROP TABLE IF EXISTS `passout`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `passout` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `course` varchar(100) NOT NULL,
+  `mobile` varchar(10) NOT NULL,
+  `batch` int(4) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `mobiile_UNIQUE` (`mobile`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `passout`
+--
+
+LOCK TABLES `passout` WRITE;
+/*!40000 ALTER TABLE `passout` DISABLE KEYS */;
+/*!40000 ALTER TABLE `passout` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `rules`
+--
+
+DROP TABLE IF EXISTS `rules`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `rules` (
+  `college` varchar(500) NOT NULL,
+  `mzp` int(5) DEFAULT NULL,
+  `map` int(5) DEFAULT NULL,
+  `mtp` int(5) DEFAULT NULL,
+  `mapg` int(5) DEFAULT NULL,
+  `mapi` int(5) DEFAULT NULL,
+  `mzpg` int(5) DEFAULT NULL,
+  `mzpi` int(5) DEFAULT NULL,
+  PRIMARY KEY (`college`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `rules`
+--
+
+LOCK TABLES `rules` WRITE;
+/*!40000 ALTER TABLE `rules` DISABLE KEYS */;
+INSERT INTO `rules` VALUES ('CET Bareilly',5,5,5,3,3,3,3),('CET Unnao',5,5,5,3,3,3,3),('IBS Unnao',5,5,5,3,3,3,3),('IMS Bareilly',5,5,5,3,3,3,3),('other',5,5,5,3,3,3,3),('WCET Bareilly',5,5,5,3,3,3,3);
+/*!40000 ALTER TABLE `rules` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `team`
+--
+
+DROP TABLE IF EXISTS `team`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `team` (
+  `tid` int(10) NOT NULL AUTO_INCREMENT,
+  `eid` varchar(45) NOT NULL,
+  `names` text NOT NULL,
+  `nop` int(5) DEFAULT NULL,
+  PRIMARY KEY (`tid`)
+) ENGINE=InnoDB AUTO_INCREMENT=20000 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `team`
+--
+
+LOCK TABLES `team` WRITE;
+/*!40000 ALTER TABLE `team` DISABLE KEYS */;
+/*!40000 ALTER TABLE `team` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-02-22 23:18:53

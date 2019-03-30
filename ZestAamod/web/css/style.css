@@ -1,0 +1,115 @@
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: gray;
+}
+.fancy {
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 20px;
+}
+#footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    background: black;
+    padding-left: 100px;
+}
+.centered{
+    top: 50%;
+    left: 25%;
+    right: 10%;
+    margin-top: 50px;
+    clear: both;
+}
+.centered2{
+    clear: both;
+    float: left;
+    top: 50%;
+    left: 25%;
+    right: 10%;
+    margin-top: -50px;
+
+}
+@-webkit-keyframes fall{
+    from {top: 100px;}
+to 	{top: 450px;}
+}
+@-webkit-keyframes slide{
+    from {left: -0px;}
+to 	{left: 500px;}
+}
+@-webkit-keyframes slideAround{
+    0% {left: 100px;}
+10% {left: 110px;}
+20% {left: 75px;}
+30% {left: 80px;}
+40% {left: 65px;}
+50% {left: 150px;}
+60% {left: 90px;}
+70% {left: 300px;}
+80% {left: 115px;}
+90% {left: 125px;}
+100% {left: 100px;}
+}
+@-webkit-keyframes crazy{
+    0% {left: 100px;-webkit-transform: rotate(180deg);}
+25% {left: 300px;-webkit-transform: rotate(0deg);font-size:3em;color:#f00;}
+28% {left: 250px;-webkit-transform: rotate(0deg);font-size:4em;color:#f00;text-shadow: 0px 0px 100px black;}
+35% {left: 250px;-webkit-transform: rotate(0deg);font-size:1.5em;color:#000;}
+50% {left: 75px;-webkit-transform: rotate(-180deg);}
+75% {left: 200px;-webkit-transform: rotate(45deg);}
+100% {left: 75px;-webkit-transform: rotate(-1200deg)}
+}
+#box .fall{
+    position: absolute;
+    top: 100;
+    -webkit-animation-name: fall;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease-out;
+}
+#box .slide{
+    position: absolute;
+    top: 100;
+    -webkit-animation-name: slide;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: ease-out;
+}
+#box .slideAround{
+    position: absolute;
+    top: 100;
+    left:250;
+    -webkit-animation-name: slideAround;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+#box .crazy{
+    position: absolute;
+    top: 100;
+    left:250;
+    -webkit-animation-name: crazy;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+.a1{
+    -webkit-animation-duration: 4s;
+}
+.a2{
+    -webkit-animation-duration: 8s;
+}
+.a3{
+    -webkit-animation-duration: 9s;
+}
+.a4{
+    -webkit-animation-duration: 4s;
+}
+.bigger{font-size:45px;color:#9caa6d;z-index:-5}
+table td { word-wrap:break-word;}
+table { page-break-inside:auto }
+tr    { page-break-inside:avoid;}
+thead { display:table-header-group }
+tbody { display:table-header-group }
